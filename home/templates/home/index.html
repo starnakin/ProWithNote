@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyond School</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token%}
+        <h2>Connexion Beyond School</h2>
+        <input type="text" name="username" placeholder="Insérez votre pseudo">
+        <input type="password" name="password" placeholder="Insérez votre mot de passe">
+        <input type="submit">
+    </form>
+</body>
+</html>
