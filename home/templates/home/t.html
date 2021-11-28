@@ -1,0 +1,19 @@
+<table><tr><td><b>Trimestre 1</b></td><td><b>Votre Moyenne</b></td><td><b>Moyenne de la classe</b></td><td><b>Coefficient</b></td></tr><tr class='rows-0'><td>PHYSIQ.CHIMIE&MATHS > PHYSIQ.CHIMIE&MATHS</td><td class='average'>14.57</td><td class='classe-average'>7.44</td><td><input class='coef' type='number' min='0' value='1'></td></tr><tr class='rows-1'><td>SYST.INFORM.ET NUM. > SYST.INFORM.ET NUM.</td><td class='average'>16.91</td><td class='classe-average'>12.52</td><td><input class='coef' type='number' min='0' value='1'></td></tr><tr class='rows-2'><td>PHYSIQ.CHIMIE&MATHS > PHYSIQ.CHIMIE&MATHS</td><td class='average'>18.59</td><td class='classe-average'>9.81</td><td><input class='coef' type='number' min='0' value='1'></td></tr><tr class='rows-3'><td>MATHEMATIQUES</td><td class='average'>15.7</td><td class='classe-average'>10.97</td><td><input class='coef' type='number' min='0' value='1'></td></tr><tr class='rows-4'><td>ENS. TECHNO. EN LV1 > ENS. TECHNO. EN LV1</td><td class='average'>14.0</td><td class='classe-average'>11.84</td><td><input class='coef' type='number' min='0' value='1'></td></tr><tr class='rows-5'><td>HISTOIRE-GEOGRAPHIE</td><td class='average'>13.75</td><td class='classe-average'>14.16</td><td><input class='coef' type='number' min='0' value='1'></td></tr><tr class='rows-6'><td>PHILOSOPHIE</td><td class='average'>14.0</td><td class='classe-average'>11.42</td><td><input class='coef' type='number' min='0' value='1'></td></tr><tr class='rows-7'><td>SYST.INFORM.ET NUM. > 2I2D</td><td class='average'>15.45</td><td class='classe-average'>11.24</td><td><input class='coef' type='number' min='0' value='1'></td></tr><tr class='rows-8'><td>ALLEMAND LV2</td><td class='average'>4.31</td><td class='classe-average'>7.9</td><td><input class='coef' type='number' min='0' value='1'></td></tr><tr class='rows-9'><td>ENS. MORAL & CIVIQUE</td><td class='average'>15.0</td><td class='classe-average'>14.95</td><td><input class='coef' type='number' min='0' value='1'></td></tr><tr class='rows-10'><td>ED.PHYSIQUE & SPORT.</td><td class='average'>11.0</td><td class='classe-average'>14.18</td><td><input class='coef' type='number' min='0' value='1'></td></tr><br><tr class='row-global'><td>Générale</td><td class='global-average'></td><td class='global-classe_average'></td></tr></table><style>th, td {padding: 15px;text-align: left;}</style>
+<script>
+    var averages = document.getElementsByClassName("average");
+    var classe_averages = document.getElementsByClassName("classe-average");
+    var coefs = document.getElementsByClassName("coef");
+    var global_average = 0.0;
+    var global_classe_average = 0.0;
+    var number_of_grade= 0;
+    for (let i = 0; i < averages.length; i++) {
+        coef = parseInt(coefs[i].value);
+        global_average += parseFloat(averages[i].textContent)*coef;
+        global_classe_average += parseFloat(classe_averages[i].textContent)*coef;
+        number_of_grade += coef;
+    }
+    console.log(global_average, number_of_grade, typeof(parseFloat(global_average)));
+    document.getElementsByClassName("global-average")[0].textContent = global_average/number_of_grade;
+    document.getElementsByClassName("global-classe_average")[0].textContent = global_classe_average/number_of_grade;
+
+</script>
